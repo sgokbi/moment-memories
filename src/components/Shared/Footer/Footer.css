@@ -1,0 +1,20 @@
+.footer-div{
+    width: 600px;
+    color: white;
+    margin: 0px 200px 0px 350px;
+    padding: 50px;
+}
+.footer-section{
+    background-color: lightseagreen;
+}
+h5{
+    color: rgb(16, 16, 204);
+}
+.social-icon-div{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.social-icon-img{
+    height: 50px;
+    width: 50px;
+}

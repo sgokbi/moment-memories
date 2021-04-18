@@ -1,0 +1,9 @@
+.book-now{
+    height: 40px;
+    width: 150px;
+    border-radius: 10px;
+    font-size: 15px;
+    margin: 10px 0 10px;
+    background-color: rgb(240, 119, 234);
+    color:white;
+}

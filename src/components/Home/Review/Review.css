@@ -1,0 +1,12 @@
+.review-div{
+    height: 200px;
+    width: 380px;
+    background-color: rgb(241, 207, 241);
+    padding: 20px;
+    border-radius: 10px;
+}
+.reviews-img{
+    height: 140px;
+    width: 140px;
+    border-radius: 100px;
+}

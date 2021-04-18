@@ -1,0 +1,16 @@
+.sidebar-icons{
+    height: 25px;
+    width: 25px;
+    margin-right: 10px;
+}
+.sidebar-headings{
+    color: white;
+    margin-top: 20px;
+}
+.button{
+    background-color: teal;
+    height: 40px;
+    width: 180px;
+    color: white;
+    border-radius: 10px;
+}
