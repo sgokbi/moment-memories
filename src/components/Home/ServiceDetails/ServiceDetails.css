@@ -8,7 +8,7 @@
     color:white;
 }
 .service-details-div{
-    height: 250px;
+    height: 260px;
     width: 280px;
     background-color: rgb(241, 207, 241);
     padding:30px;
@@ -16,8 +16,8 @@
     margin:5px 8px 10px ;
 }
 .service-image{
-    width: 80px;
-    height: 80px;
+    width:100px;
+    height: 100px;
     border-radius: 100px;
-    margin: 10px 5px;
+    margin: 8px 5px;
 }

@@ -5,7 +5,7 @@ const Contact = () => {
     return (
         <section className="text-center contact-div" >
             <div>
-                <h2>Contact With Us</h2>
+                <h2>Contact Us</h2>
             </div>
             <div className="contact-form">
                 <form action=" ">
