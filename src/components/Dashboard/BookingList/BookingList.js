@@ -22,7 +22,7 @@ const BookingList = () => {
                 </div>
                 <div className="col-md-9 dashboard-work-div">
                     <h2 className="dashboard-heading"> Your Booking List</h2>
-                    <h3>Hello, {loggedInUser.displayName}! You have {bookings.length} bookings.</h3>
+                    <h3>Hello, {loggedInUser.name}! You have {bookings.length} bookings.</h3>
                     {
                         bookings.map(book => <li>{book.serviceName} </li>)
                     }

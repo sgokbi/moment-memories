@@ -27,8 +27,8 @@ const Book = () => {
     const handlePaymentSuccess = paymentId => {
         const bookingData = {
             paymentId,
-            userName: loggedInUser.name,
-            userEmail: loggedInUser.email,
+            name: loggedInUser.name,
+            email: loggedInUser.email,
             serviceName: booking.name,
             serviceCharge: booking.charge
         };
@@ -70,7 +70,7 @@ const Book = () => {
                     <h4> Service Name: {booking.name}</h4>
                     <form style={{ display: bookingData ? "none" : "block" }} onSubmit={handleSubmit(onSubmit)}>
                         <h6>Name</h6>
-                        <input className="input-space" name=" userName" defaultValue={loggedInUser.name} ref={register} />
+                        <input className="input-space" name=" name" defaultValue={loggedInUser.name} ref={register} />
                         <br />
                         <h6 >Email</h6>
                         <input className="input-space" name="email" defaultValue={loggedInUser.email} ref={register} />

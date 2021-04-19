@@ -13,7 +13,7 @@ const ManageServices = () => {
         fetch("http://localhost:5500/services")
             .then(res => res.json())
             .then(data => setServicesList(data))
-    }, [])
+    }, [servicesList])
 
     return (
         <section className="">
