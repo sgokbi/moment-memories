@@ -1,11 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import Sidebar from '../Sidebar/Sidebar';
 
 const MakeAdmin = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+
+
+    const onSubmit = data => {
+        console.log(data)
+        const adminData = {
+            email: data.email
+        };
+        // const url = `http://localhost:5500/makeAdmin`;
+        fetch(`http://localhost:5500/makeAdmin`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(adminData)
+        })
+            .then(res => console.log("server side res", res))
+    };
 
     return (
         <section className="dashboard-section">

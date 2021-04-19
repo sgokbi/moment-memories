@@ -11,7 +11,8 @@ const BookingList = () => {
         fetch("http://localhost:5500/bookings?email=" + loggedInUser.email)
             .then(res => res.json())
             .then(data => setBookings(data))
-    }, [])
+    }, [loggedInUser.email])
+
 
     return (
         <section className="dashboard-section">
