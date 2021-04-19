@@ -18,8 +18,6 @@ const Login = () => {
     const location = useLocation();
     const { from } = location.state || { from: { pathname: "/" } };
 
-
-
     const handleGoogleSignIn = () => {
         const provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth()
@@ -29,10 +27,8 @@ const Login = () => {
                 const signedInUser = { name: displayName, email }
                 setLoggedInUser(signedInUser);
                 history.replace(from);
-                console.log(signedInUser);
             }).catch((error) => {
-                var email = error.email;
-
+                const email = error.email;
             });
     }
 

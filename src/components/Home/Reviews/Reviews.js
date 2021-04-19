@@ -5,29 +5,11 @@ import "./Reviews.css";
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-
-// const reviews = [
-//     {
-//         image: img,
-//         name: "Riya",
-//         quote: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptates, porro maiores laudantium explicabo incidunt."
-//     },
-//     {
-//         image: img,
-//         name: "Catherin",
-//         quote: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptates, porro maiores laudantium explicabo incidunt."
-//     },
-//     {
-//         image: img,
-//         name: "Max",
-//         quote: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptates, porro maiores laudantium explicabo incidunt."
-//     },
-// ]
-
 const Reviews = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5500/reviews")
+        //API to get all reviews in UI from database
+        fetch("https://salty-earth-74088.herokuapp.com/reviews")
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])

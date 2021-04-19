@@ -10,7 +10,8 @@ const ManageServices = () => {
     const [servicesList, setServicesList] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5500/services")
+        //api to get all services in UI from database
+        fetch("https://salty-earth-74088.herokuapp.com/services")
             .then(res => res.json())
             .then(data => setServicesList(data))
     }, [servicesList])
@@ -21,7 +22,6 @@ const ManageServices = () => {
                 <div className="col-md-3 sidebar ">
                     <Sidebar />
                 </div>
-
                 <div className="col-md-9 manage-div ">
                     <h2 className="dashboard-heading">Manage Services</h2>
                     {

@@ -10,9 +10,7 @@ const SimpleCardForm = ({ handlePayment }) => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-
         if (!stripe || !elements) {
-
             return;
         }
 
@@ -23,14 +21,12 @@ const SimpleCardForm = ({ handlePayment }) => {
         });
 
         if (error) {
-            console.log('[error]', error);
             setPaymentError(error.message);
             setPaymentSuccess(null);
         } else {
             setPaymentSuccess(paymentMethod.id);
             setPaymentError(null);
             handlePayment(paymentMethod.id)
-            console.log('[PaymentMethod]', paymentMethod);
         }
     };
 

@@ -9,23 +9,24 @@ import "./Photographers.css"
 const photographers = [
     {
         image: photographer1,
-        name: "Stephen"
+        name: "Peter Roxburgh"
     },
     {
         image: photographer2,
-        name: "Stephen"
+        name: "Julia Noem"
     },
     {
         image: photographer3,
-        name: "Stephen"
+        name: "Michel Riven"
     },
     {
         image: photographer4,
-        name: "Stephen"
+        name: "Robert Burce"
     }
 ]
 
 const Photographers = () => {
+
     return (
         <div className="mt-5 pt-5 pb-3 photographers-div">
             <h3 className="text-center photographers-heading">OUR PHOTOGRAPHERS</h3>

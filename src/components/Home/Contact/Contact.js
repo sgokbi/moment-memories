@@ -12,9 +12,6 @@ const Contact = () => {
                     <div className="form-group mt-3">
                         <input type="text" className="form-control" placeholder="Email Address *" />
                     </div>
-                    {/* <div className="form-group mt-3">
-                        <input type="text" className="form-control" placeholder="Subject *" />
-                    </div> */}
                     <div className="form-group mt-3">
                         <textarea name="" className="form-control" id="" cols="5" rows="5" placeholder="Message *"></textarea>
                     </div>

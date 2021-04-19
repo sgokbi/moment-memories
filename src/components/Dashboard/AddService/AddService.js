@@ -16,7 +16,8 @@ const AddService = () => {
             imageURL: imageURL,
             charge: data.charge
         };
-        const url = `http://localhost:5500/addService`
+        //new service add API
+        const url = `https://salty-earth-74088.herokuapp.com/addService`
         console.log(serviceData);
         fetch(url, {
             method: 'POST',
@@ -25,24 +26,19 @@ const AddService = () => {
             },
             body: JSON.stringify(serviceData)
         })
-            .then(res => console.log("server side response", res))
     };
 
     const handleImageUpload = event => {
-        console.log(event.target.files[0]);
         const imageData = new FormData();
         imageData.set("key", "2920637730192fda2f6df0a3ff9f8920")
         imageData.append("image", event.target.files[0])
-
         axios.post('https://api.imgbb.com/1/upload',
             imageData)
             .then(function (response) {
                 setImageURL(response.data.data.display_url);
             })
             .catch(function (error) {
-                console.log(error);
             });
-
     }
 
     return (
@@ -50,7 +46,6 @@ const AddService = () => {
             <div className="row dashboard-div ">
                 <div className="col-md-3 sidebar ">
                     <Sidebar />
-
                 </div>
                 <div className="col-md-9 dashboard-work-div">
                     <h2 className="dashboard-heading">Add Service</h2>

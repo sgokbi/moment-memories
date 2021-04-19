@@ -13,15 +13,16 @@ const ServiceDetails = (props) => {
 
     return (
         <div className="col-md-4  d-flex align-items-center service-details-div">
-            <div>
-                <img className="" src={imageURL} alt="" />
+            <div className="service-details div">
+                <div>
+                    <img className="service-image" src={imageURL} alt="" />
+                </div>
+                <div className="ms-3">
+                    <p>{name}</p>
+                    <p>Charge:{charge}</p>
+                    <button className="book-now" onClick={() => handleBook(_id)}>Book This Service</button>
+                </div>
             </div>
-            <div className="ms-3">
-                <p>{name}</p>
-                <p>Charge:{charge}</p>
-                <button className="book-now" onClick={() => handleBook(_id)}>Book This Service</button>
-            </div>
-
         </div>
 
     );

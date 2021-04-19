@@ -11,7 +11,6 @@ import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
 import Book from "./components/Dashboard/Book/Book";
 import BookingList from "./components/Dashboard/BookingList/BookingList";
 import AddReview from "./components/Dashboard/AddReview/AddReview";
-import AllBookedList from "./components/Dashboard/AllBookedList/AllBookedList";
 import AddService from "./components/Dashboard/AddService/AddService";
 import MakeAdmin from "./components/Dashboard/MakeAdmin/MakeAdmin";
 import ManageServices from "./components/Dashboard/ManageServices/ManageServices";
@@ -23,10 +22,8 @@ export const UserContext = createContext();
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
-
   return (
     < UserContext.Provider value={[loggedInUser, setLoggedInUser]} >
-      {/* <p>name: {loggedInUser.name}</p> */}
       <Router>
         <Switch>
           <Route exact path="/">
@@ -35,9 +32,12 @@ function App() {
           <Route path="/home">
             <Home />
           </Route>
-          <Route path="/dashboard">
-            <Dashboard />
+          <Route path="/about">
+            <Home />
           </Route>
+          <PrivateRoute path="/dashboard">
+            <Dashboard />
+          </PrivateRoute>
           <Route path="/book">
             <Book />
           </Route>
@@ -46,9 +46,6 @@ function App() {
           </Route>
           <Route path="/addReview">
             <AddReview />
-          </Route>
-          <Route path="/bookedList">
-            <AllBookedList />
           </Route>
           <Route path="/addService">
             <AddService />
@@ -59,15 +56,9 @@ function App() {
           <Route path="/manageService">
             <ManageServices />
           </Route>
-
           <PrivateRoute path="/admin">
             <Dashboard />
           </PrivateRoute>
-
-
-          {/* <Route path="/admin">
-            <Dashboard />
-          </Route> */}
           <Route path="/login">
             <Login />
           </Route>
@@ -77,7 +68,6 @@ function App() {
         </Switch>
       </Router>
     </UserContext.Provider >
-
   );
 }
 

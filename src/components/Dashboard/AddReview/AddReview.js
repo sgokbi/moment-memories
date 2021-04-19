@@ -10,15 +10,13 @@ const AddReview = () => {
     const [imageURL, setImageURl] = useState(null);
 
     const onSubmit = data => {
-
         const reviewData = {
             name: data.name,
             description: data.description,
             imageURL: imageURL
         };
-        console.log(reviewData)
-
-        const url = `http://localhost:5500/addReview`;
+        //review add API
+        const url = `https://salty-earth-74088.herokuapp.com/addReview`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -33,7 +31,6 @@ const AddReview = () => {
         const imageData = new FormData();
         imageData.set("key", "2920637730192fda2f6df0a3ff9f8920")
         imageData.append("image", event.target.files[0])
-
         axios.post('https://api.imgbb.com/1/upload',
             imageData)
             .then(function (response) {
@@ -42,7 +39,6 @@ const AddReview = () => {
             .catch(function (error) {
                 console.log(error);
             });
-
     }
 
     return (
@@ -50,7 +46,6 @@ const AddReview = () => {
             <div className="row dashboard-div ">
                 <div className="col-md-3 sidebar ">
                     <Sidebar />
-
                 </div>
                 <div className="col-md-9 dashboard-work-div">
                     <h2 className="dashboard-heading">Give Us Your Review</h2>

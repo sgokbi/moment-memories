@@ -5,8 +5,8 @@ const DeleteManage = (props) => {
     const { name, charge, _id } = props.service;
 
     const handleDelete = id => {
-
-        fetch(`http://localhost:5500/delete/${id}`, {
+        //delete API 
+        fetch(`https://salty-earth-74088.herokuapp.com/delete/${id}`, {
             method: "DELETE",
         })
             .then(res => res.json())
@@ -14,12 +14,10 @@ const DeleteManage = (props) => {
             })
     }
 
-
     return (
         <div className="manage-book-list">
             <p>Service Name: {name}   </p>
             <p> Charge: {charge}</p>
-
             <button className="btn-success" onClick={() => handleDelete(_id)}>Delete</button>
         </div>
     );

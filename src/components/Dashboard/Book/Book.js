@@ -8,9 +8,6 @@ import ProcessPayment from '../ProcessPayment/ProcessPayment';
 import Sidebar from '../Sidebar/Sidebar';
 
 
-
-
-
 const Book = () => {
     const { id } = useParams();
     const [booking, setBooking] = useState({});
@@ -19,8 +16,6 @@ const Book = () => {
     const [bookingData, setBookingData] = useState(null);
 
     const onSubmit = data => {
-        // console.log(data)
-        // setBooking(data);
         setBookingData(data);
     };
 
@@ -32,8 +27,8 @@ const Book = () => {
             serviceName: booking.name,
             serviceCharge: booking.charge
         };
-        const url = `http://localhost:5500/addBooking`
-        console.log(bookingData);
+        // add booking to database API
+        const url = `https://salty-earth-74088.herokuapp.com/addBooking`
         fetch(url, {
             method: 'POST',
             headers: {
@@ -45,15 +40,14 @@ const Book = () => {
             .then(data => {
                 data && alert('You have ordered successfully');
             })
-
     }
 
     useEffect(() => {
-        const url = `http://localhost:5500/service/${id}`;
+        //API  for specific service by getting id for booking
+        const url = `https://salty-earth-74088.herokuapp.com/service/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 setBooking(data);
             })
     }, [id])
@@ -63,7 +57,6 @@ const Book = () => {
             <div className="row dashboard-div ">
                 <div className="col-md-3 sidebar ">
                     <Sidebar />
-
                 </div>
                 <div className="col-md-9 dashboard-work-div">
                     <h2 className="dashboard-heading">You are Booking...</h2>
@@ -87,7 +80,6 @@ const Book = () => {
                         <h6>Pay With Credit Card</h6>
                         <ProcessPayment handlePayment={handlePaymentSuccess}></ProcessPayment>
                     </div>
-
                 </div>
             </div>
         </section>

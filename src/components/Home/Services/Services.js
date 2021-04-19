@@ -6,11 +6,11 @@ import { useEffect } from 'react';
 
 
 const Services = () => {
-
     const [servicesList, setServicesList] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5500/services")
+        //API to get all services in UI from database
+        fetch("https://salty-earth-74088.herokuapp.com/services")
             .then(res => res.json())
             .then(data => setServicesList(data))
     }, [])

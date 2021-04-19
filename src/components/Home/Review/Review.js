@@ -4,6 +4,7 @@ import "./Review.css";
 
 const Review = (props) => {
     const { name, description, imageURL } = props.review;
+
     return (
         <div className="col-md-4  ">
             <div className=" review-div d-flex align-items-center">
@@ -12,7 +13,6 @@ const Review = (props) => {
                     <h6 className="text-center text-primary">{name}</h6>
                 </div>
                 <div className="ms-3" >
-
                     <p>{description}</p>
                 </div>
             </div>

@@ -8,22 +8,19 @@ const BookingList = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     useEffect(() => {
-        fetch("http://localhost:5500/bookings?email=" + loggedInUser.email)
+        fetch("https://salty-earth-74088.herokuapp.com/bookings?email=" + loggedInUser.email)
             .then(res => res.json())
             .then(data => setBookings(data))
     }, [loggedInUser.email])
-
 
     return (
         <section className="dashboard-section">
             <div className="row dashboard-div ">
                 <div className="col-md-3 sidebar ">
                     <Sidebar />
-
                 </div>
                 <div className="col-md-9 dashboard-work-div">
-                    <h2 className="dashboard-heading"> Your Booking List</h2>
-                    <h3>Hello, {loggedInUser.name}! You have {bookings.length} bookings.</h3>
+                    <h2 className="dashboard-heading">Booking List</h2>
                     {
                         bookings.map(book => <li>{book.serviceName} </li>)
                     }
