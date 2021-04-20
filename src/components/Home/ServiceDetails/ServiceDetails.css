@@ -21,3 +21,7 @@
     border-radius: 100px;
     margin: 8px 5px;
 }
+.service-image:hover  {
+    height: 110px;
+    width: 110px;
+}
